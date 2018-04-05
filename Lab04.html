@@ -13,7 +13,82 @@
 </header>
 <main>
    <section>
-   
+       <form method="POST" action="http://www.randyconnolly.com/tests/process.php">
+            <fieldset>
+                <legend>photo details</legend>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <p>Title</p>
+                                <input type="text" name="title" placeholder="Give your photo a descriptive name">
+                                <p>Description</p>
+                                <textarea name="description" rows="6" placeholder="Adding a rich description will help with search results"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Continent</p>
+                                <select>
+                                    <option value="Choose continent">Choose continent</option>
+                                </select>
+                                <p>Country</p>
+                                <select>
+                                    <option value="Choose country">Choose country</option>
+                                </select>
+                                <p>City</p>
+                                <input type="text" name="city">
+                            </td>
+                            <td>
+                                <div class="box">
+                                    <p>Copyright?</p>
+                                    <input type="radio">All rights reserved
+                                    <br />
+                                    <input type="radio" checked>Create Commons
+                                </div>
+                                <div class="box">
+                                    <p>Creative Commons Types</p>
+                                    <input type="checkbox">Attribute
+                                    <br />
+                                    <input type="checkbox">Noncommercial
+                                    <br />
+                                    <input type="checkbox">No Derivative Works
+                                </div>
+                            </td>
+                        </tr>
+                        <tr >
+                            <td colspan="2">
+                                <p class="rectangle">I accept the software license <input type="checkbox"></p>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Rate this photo:</p>
+                                <input type="number" name="number">
+                                <p>Color Collection:</p>
+                                <input type="color" name="color">
+                            </td>
+                            <td>
+                                <div class="box">
+                                    <p>Date Taken:</p>
+                                    <input type="date">
+                                    <p>Time Taken:</p>
+                                    <input type="time">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p class="rectangle">
+                                    <input class="rounded" type="submit">
+                                    <input class="rounded" type="reset" value="Clear Form">
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+       </form>
    </section>
 </main>  
 

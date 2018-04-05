@@ -110,6 +110,10 @@ select {
   width: 75%;
 }
 
+input[name=number] {
+  width: 4em;
+}
+
 textarea {
   width: 100%;
 }
