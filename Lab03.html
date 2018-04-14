@@ -1,91 +1,171 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Share Your Travels</title>
-        <link rel="stylesheet" type="text/css" href="./css/Lab03.css" />
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous">
+
+        <title>Gallery</title>
     </head>
 
     <body>
-        <div id="article">
-            <!--Title and slogan of the page-->
-            <div class="head">
-                <p class="title"> <b>Share Your Travels</b></h1>
-                <p class="slogan"><i>Let us know where you've been</i></p>
-            </div>
-            
-            <!--Nav of the page-->
-            <nav>
-                <ul>
-                    <li><a class="change" href="#Description">Description</a></li><li
-                    ><a class="change" href="#Related photos">Related Photos</a></li><li
-                    ><a class="change" href="#Reviews">Reviews</a></li>
-                </ul>
-            </nav>
-            
-            
-            <div id="sections">
-                <!--Section1-->
-                <section>
-                    <a name="Description"></a>
-                    <p class="title"><b>NEW YORK - CENTRAL PARK</b></p>
-                    
-
-                    <img class="widthMax" src="images/central-park.jpg" alt="central-park ">
-                    
-                    <p class="imgName"><i>Conservatory Pond in Central Park</i></p>
-                    
-                    <p class="comments">
-                        This photo of Conservatory Pond in<b>
-                        <a href="#">Central Park</a></b> in<b>
-                        <a href="#">New Tork City</a></b>
-                        was taken on October 22, 2016 with a Canon EOS 30D camera.
-                    </p>
-
-                    <p class="comments options">
-                        <img src="images/icon_download.png" alt="download ">
-                        <img src="images/icon_mail.png" alt="mail ">
-                        <img src="images/icon_map.png" alt="map ">
-                        <img src="images/icon_up.png" alt="up ">
-                        <img src="images/icon_down.png" alt="down ">
-                    </p>
-                </section>
-                
-                <!--Section2-->
-                <section>
-                    <a name="Related photos"></a><p class="title"><b>RELATED PHOTOS</b></p>
-                    <div class="photoList comments">
-                        <img src="images/related-square1.jpg" alt="Photo_1 ">&nbsp;<img
-                         src="images/related-square2.jpg" alt="Photo_2 ">&nbsp;<img
-                         src="images/related-square3.jpg" alt="Photo_3 ">
+        <header>
+            <div id="article">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 text-center">
+                            <h2 class="text-nowrap">Share Your Travels</h2>
+                            <h6 class="text-nowrap"><em>Let us know where you've been</em></h6>
+                        </div>
+                        <div class="col-md-8 text-nowrap">
+                            <nav class="nav nav-justified">
+                                <div class="col-md"><div class="nav-item"><a class="nav-link text-secondary" href="Lab04.html">Upload</a></div></div>
+                                <div class="col-md "><div class="nav-item"><a class="nav-link text-secondary" href="#">Related Photos</a></div></div>
+                                <div class="col-md"><div class="nav-item"><a class="nav-link text-secondary" href="#">Reviews</a></div></div>
+                            </nav>
+                        </div>
                     </div>
-                </section>
-                
-                <!--Section3-->
-                <section id="Bottom">
-                    <a name="Reviews"></a>
-                    <p class="title"><b>REVIEWS</b></p>
-                    <div class="comments">
-                        <p class="user"><i class="name">Ricardo on <span class="date">2016-05-23</span></i></p>
-                        <p class="user">Easy on the HDR buddy.</p>
-                        <hr>
-                        <p class="user top"><i class="name">Susan on <span class="date">2016-11-18</span></i></p>
-                        <p class="user">I love Central Park.</p>
-                        <hr>
-                        <p class="user"> </p>
-                    </div>
-                    </section>
-            </div>
-            
-            <!--Footer of the page-->
-            <footer>
-                <p class="nav">
-                    <a class="change" href="#">Home</a>|<a
-                     class="change" href="#">Browse</a>|<a
-                     class="change" href="#">Search</a>
-                </p>
-                <p class="copyright">Copyright &#169; 2017 Share Your Travels</p>
-            </footer>
+                </div>
+        </header>
 
-        </div>
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 pr-0">
+                        <div class="card">
+                            <div class="cardbody p-3">
+                                <h4 class="card-title">New York - Central Park</h4>
+                                <p class="card-subtitle text-muted">Conservatory Pond in Central Park</p>
+                                <a href="imgPage/img - Central Park.html">
+                                    <img class="card-img py-2" src="images/large-central-park.jpg" alt="Central-park">
+                                </a>
+                                <p class="">
+                                    This photo of Conservatory Pond in
+                                    <a href="#"> Central Park </a>
+                                    in
+                                    <a href="#"> New Tork City </a>
+                                    was taken on October 22, 2016 with a Canon EOS 30D camera.
+                                </p>
+                                <div class="row justify-content-end">
+                                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                        <div class="btn-group mr-3 " role="group">
+                                            <button type="button" class="btn btn-light">
+                                                <img src="images/icon_download.png" alt="download">
+                                            </button>
+                                            <button type="button" class="btn btn-light">
+                                                <img src="images/icon_mail.png" alt="mail">
+                                            </button>
+                                            <button type="button" class="btn btn-light">
+                                                <img src="images/icon_map.png" alt="map">
+                                            </button>
+                                            <button type="button" class="btn btn-light">
+                                                <img src="images/icon_up.png" alt="up">
+                                            </button>
+                                            <button type="button" class="btn btn-light">
+                                                <img src="images/icon_down.png" alt="download">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="cardbody p-3">
+                                <h4 class="card-title">Related Photos</h4>
+                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <a href="images/related-large1.jpg"><img class="d-block w-100" src="images/related-square1.jpg" alt="First slide"></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="images/related-large2.jpg"><img class="d-block w-100" src="images/related-square2.jpg" alt="Second slide"></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="images/related-large3.jpg"><img class="d-block w-100" src="images/related-square3.jpg" alt="Third slide"></a>
+                                        </div>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardbody p-3">
+                                <h3 class="card-title">Reviews</h3>
+                                <div class="text-center">
+                                    <a class="btn p-0 my-0" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <em><strong>Ricardo</em></strong>
+                                        <div><span class="badge badge-pill badge-info"><em>2016-05-23</em></span></div>
+                                    </a>
+                                </div>
+                                <div id="collapseOne" class="collapse text-center" aria-labelledby="headingOne">
+                                        Easy on the HDR buddy.
+                                </div>
+                                <hr />
+                                <div class="text-center">
+                                    <a class="btn p-0 m-0" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <em><strong>Susan</em></strong>
+                                        <div><span class="badge badge-pill badge-info"><em>2016-05-23</em></span></div>
+                                        </a>
+                                    </div>
+                                <div id="collapseTwo" class="collapse text-center" aria-labelledby="headingOne">
+                                    I love Central Park.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        <footer class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="text-center col-6">
+                    <nav class="nav nav-justified">
+                        <div class="col-sm-4">
+                            <div class="nav-item">
+                                <a class="nav-link text-info" href="#">Home</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="nav-item">
+                                <a class="nav-link text-info" href="#">Browse</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="nav-item">
+                                <a class="nav-link text-info" href="#">Search</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+            <p class="text-center text-muted"><em>Copyright &#169; 2017 Share Your Travels</em></p>
+        </footer>
+
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
     </body>
 </html>
