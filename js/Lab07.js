@@ -183,7 +183,7 @@ function deleteTableFun(){
     let optn = selectTwo.selectedIndex-1;
     if (optn == -1) return;
     let obj = document.getElementById("tables").getElementsByTagName("table")[optn];
-    let objName = document.getElementById("selectTwo").getElementsByTagName("option")[optn];
+    let objName = document.getElementById("selectTwo").getElementsByTagName("option")[optn+1];
     tList.splice(optn,1);
     tables.removeChild(obj);
     selectTwo.removeChild(objName);
