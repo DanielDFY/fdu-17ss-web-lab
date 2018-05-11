@@ -8,6 +8,7 @@ function chooseFun() {
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "none";
+            document.getElementById("selectTwo").style.display = "none";
             while (attrs.hasChildNodes()) {
                 attrs.removeChild(attrs.firstChild);
             }
@@ -21,18 +22,21 @@ function chooseFun() {
         case "addRow":
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "inline";
+            if (selectTwo.children.length == 1) document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "none";
             addRowPre();
             break;
         case "deleteRow":
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "inline";
+            if (selectTwo.children.length == 1) document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "none";
             deleteRowPre();
             break;
         case "deleteTable":
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "inline";
+            if (selectTwo.children.length == 1) document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "block";
             deleteTablePre();
             break;
@@ -176,12 +180,14 @@ function deleteTablePre() {
     while (attrs.hasChildNodes()) {
         attrs.removeChild(attrs.firstChild);
     }
+    let optn = selectTwo.selectedIndex - 1;
+    if (optn == -1) return;
 }
 
 function deleteTableFun(){
     let tables = document.getElementById("tables");
     let optn = selectTwo.selectedIndex-1;
-    if (optn == -1) return;
+    if (optn == -1)return;
     let obj = document.getElementById("tables").getElementsByTagName("table")[optn];
     let objName = document.getElementById("selectTwo").getElementsByTagName("option")[optn+1];
     tList.splice(optn,1);
