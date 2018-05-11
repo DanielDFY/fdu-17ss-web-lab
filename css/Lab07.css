@@ -1,0 +1,33 @@
+#container {
+    text-align: center;
+}
+
+select, button {
+    width: 300px;
+}
+
+#warning{
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+}
+
+table {
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table th{
+    background-color: gray;
+    color: whitesmoke;
+}
+
+table tr.odd{
+    background-color: lightgrey;
+}
+
+table td{
+    padding: 0 0.5em;
+}
