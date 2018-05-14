@@ -16,7 +16,6 @@ function chooseFun() {
             break;
         case "createTable":
             document.getElementById("create").style.display = "inline";
-            document.getElementById("commit").style.display = "inline";
             document.getElementById("warning").style.display = "none";
             createTablePre();
             break;
@@ -45,7 +44,6 @@ function commitFun() {
     let opt = selectOne.options[selectOne.selectedIndex];
     switch (opt.value) {
         case "createTable":
-            if (!checkPre())return;
             createTableFun();
             break;
         case "addRow":
@@ -69,6 +67,7 @@ function createAttr(num) {
         for (let i = 0; i < num; ++i) {
             let attr = document.createElement("input");
             attr.placeholder = "Attr" + (i + 1);
+            attr.onchange = checkPre;
             attrs.appendChild(attr);
         }
     }
@@ -94,13 +93,14 @@ function checkPre() {
     let n = document.getElementsByName("columnsNum")[0].value;
     let name = document.getElementsByName("tableName")[0].value;
     let attrs = document.getElementById("attrs");
-    let flag = true;
-    if(n<1||name=="")return 0;
+    let flag = false;
+    if (n > 0 && name !== "") flag = true;
     for (let i = 0; i < n; ++i) {
         let text = attrs.getElementsByTagName("input")[i].value;
         if(text=="")flag=false;
     }
-    return flag;
+    if (flag) document.getElementById("commit").style.display = "inline";
+    else document.getElementById("commit").style.display = "none";
 }
 
 function createTableFun() {
@@ -212,11 +212,13 @@ function deleteTableFun(){
 
 window.onload = function () {
     let columnsNum = document.getElementsByName("columnsNum")[0];
+    let tableName = document.getElementsByName("tableName")[0];
     let selectOne = document.getElementById("selectOne");
     let selectTwo = document.getElementById("selectTwo");
     let commitBtn = document.getElementById("commitBtn");
-    columnsNum.onchange = createTablePre;
     selectOne.onchange = chooseFun;
     selectTwo.onchange = chooseTable;
+    columnsNum.onchange = createTablePre;
+    tableName.onchange = checkPre;
     chooseFun();
 }
