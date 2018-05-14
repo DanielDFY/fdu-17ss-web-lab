@@ -3,11 +3,13 @@ let tList = [];
 function chooseFun() {
     let attrs = document.getElementById("attrs");
     let opt = selectOne.options[selectOne.selectedIndex];
+    document.getElementById("tables").style.display = "inline";
     switch (opt.value) {
         case "selectOne":
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "none";
+            document.getElementById("tables").style.display = "none";
             while (attrs.hasChildNodes()) {
                 attrs.removeChild(attrs.firstChild);
             }
