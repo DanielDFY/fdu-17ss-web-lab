@@ -8,7 +8,6 @@ function chooseFun() {
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "none";
-            document.getElementById("selectTwo").style.display = "none";
             while (attrs.hasChildNodes()) {
                 attrs.removeChild(attrs.firstChild);
             }
@@ -22,21 +21,18 @@ function chooseFun() {
         case "addRow":
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "inline";
-            if (selectTwo.children.length == 1) document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "none";
             addRowPre();
             break;
         case "deleteRow":
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "inline";
-            if (selectTwo.children.length == 1) document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "none";
             deleteRowPre();
             break;
         case "deleteTable":
             document.getElementById("create").style.display = "none";
             document.getElementById("commit").style.display = "inline";
-            if (selectTwo.children.length == 1) document.getElementById("commit").style.display = "none";
             document.getElementById("warning").style.display = "block";
             deleteTablePre();
             break;
@@ -47,6 +43,7 @@ function commitFun() {
     let opt = selectOne.options[selectOne.selectedIndex];
     switch (opt.value) {
         case "createTable":
+            if (!checkPre())return;
             createTableFun();
             break;
         case "addRow":
@@ -89,6 +86,19 @@ function chooseTable() {
 function createTablePre() {
     let num = document.getElementsByName("columnsNum")[0].value;
     createAttr(num);
+}
+
+function checkPre() {
+    let n = document.getElementsByName("columnsNum")[0].value;
+    let name = document.getElementsByName("tableName")[0].value;
+    let attrs = document.getElementById("attrs");
+    let flag = true;
+    if(n<1||name=="")return 0;
+    for (let i = 0; i < n; ++i) {
+        let text = attrs.getElementsByTagName("input")[i].value;
+        if(text=="")flag=false;
+    }
+    return flag;
 }
 
 function createTableFun() {
@@ -206,6 +216,5 @@ window.onload = function () {
     columnsNum.onchange = createTablePre;
     selectOne.onchange = chooseFun;
     selectTwo.onchange = chooseTable;
-    document.getElementById("selectTwo").style.display = "none";
     chooseFun();
 }
