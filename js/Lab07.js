@@ -60,6 +60,7 @@ function commitFun() {
 
 function createAttr(num) {
     let attrs = document.getElementById("attrs");
+    let opt = selectOne.options[selectOne.selectedIndex];
     while (attrs.hasChildNodes()) {
         attrs.removeChild(attrs.firstChild);
     }
@@ -67,7 +68,8 @@ function createAttr(num) {
         for (let i = 0; i < num; ++i) {
             let attr = document.createElement("input");
             attr.placeholder = "Attr" + (i + 1);
-            attr.onchange = checkPre;
+            if (opt.value == "createTable")
+                attr.onchange = checkPre;
             attrs.appendChild(attr);
         }
     }
