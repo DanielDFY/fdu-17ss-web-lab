@@ -1,5 +1,4 @@
 <?php include 'functions.inc.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,24 +6,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>Lab08</title>
-      
+
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.css" />
-
 </head>
 
 <body>
     <!-- include header here -->
+    <?php include 'header.inc.php'; ?>
 
     <!-- Page Content -->
     <main class="container">
         <div class="row">
     
-        <!-- include left here -->          
-    
+            <!-- include left here -->
+            <?php include 'left.inc.php'; ?>
+
             <div class="col-md-10">
                 <div class="jumbotron" id="postJumbo">
                     <h1>Posts</h1>
