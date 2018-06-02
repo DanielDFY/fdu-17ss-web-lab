@@ -4,7 +4,11 @@
 //****** Hint ******
 //connect database and fetch data here
 
-$con = mysqli_connect("localhost","root","");
+$DB_HOST="localhost";
+$DB_USER="root";
+$DB_PASS="";
+
+$con = mysqli_connect($DB_HOST,$DB_USER,$DB_PASS);
 
 if(!$con){
     die("Could not connect ".mysqli_connect_error());
@@ -52,7 +56,8 @@ if(!$con){
                 //display the list of continents
 
                 mysqli_select_db($con, 'travel');
-                $result = mysqli_query($con,"SELECT * FROM Continents");
+                $sql = "SELECT * FROM Continents";
+                $result = mysqli_query($con,$sql);
 
                 while($row = $result->fetch_assoc()) {
                   echo '<option value=' . $row['ContinentCode'] . '>' . $row['ContinentName'] . '</option>';
@@ -69,7 +74,8 @@ if(!$con){
                 //****** Hint ******
                 /* display list of countries */
                 mysqli_select_db($con, 'travel');
-                $result = mysqli_query($con,"SELECT * FROM Countries");
+                $sql = "SELECT * FROM Countries";
+                $result = mysqli_query($con,$sql);
 
                 while($row = $result->fetch_assoc()) {
                     echo '<option value=' . $row['ISO'] . '>' . $row['CountryName'] . '</option>';
@@ -116,7 +122,7 @@ if(!$con){
 
             }
             mysqli_select_db($con, 'travel');
-            $result = mysqli_query($con, $sql);
+            $result = mysqli_query($con,$sql);
 
             if($result){
                 while($row = $result->fetch_assoc()) {
@@ -125,13 +131,13 @@ if(!$con){
             }
 
             function findByContinent($continent){
-                return "SELECT * FROM ImageDetails WHERE ContinentCode = $continent";
+                return "SELECT * FROM ImageDetails WHERE ContinentCode = '".$continent."'";
             }
             function findByCountry($country){
-                return "SELECT * FROM ImageDetails WHERE CountryCodeISO = $country";
+                return "SELECT * FROM ImageDetails WHERE CountryCodeISO = '".$country."'";
             }
             function findByContinentAndCountry($continent,$country){
-                return "SELECT * FROM ImageDetails WHERE ContinentCode = $continent AND CountryCodeISO = $country";
+                return "SELECT * FROM ImageDetails WHERE ContinentCode = '".$continent."' AND CountryCodeISO = '".$country."'";
             }
             function listAll(){
                 return "SELECT * FROM ImageDetails";
